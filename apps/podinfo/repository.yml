@@ -7,17 +7,18 @@ spec:
   selector: 
     matchLabels: 
       app: podinfo
-    template:
-      metadata:
-        name: podinfo
-        labels:
-          app: podinfo
-      spec:
-        containers:
-          - name: podinfo
-            image: ghcr.io/stefanprodan/podinfo:5.0.0
-            imagePullPolicy: IfNotPresent
-            ports: 
-              - name: podinfo
-                containerPort: 9898
-                protocol: TCP
+  template:
+    metadata:
+      name: podinfo
+      labels:
+        app: podinfo
+    spec:
+      containers:
+        - name: podinfo
+          image: ghcr.io/stefanprodan/podinfo:5.0.0
+          imagePullPolicy: IfNotPresent
+          ports: 
+            - name: podinfo
+              containerPort: 9898
+              protocol: TCP
+  replicas: 1
